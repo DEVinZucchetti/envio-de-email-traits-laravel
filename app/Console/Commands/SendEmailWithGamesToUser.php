@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Console\Commands;
-
+use Illuminate\Support\Facades\Log;
 use App\Models\Product;
 use Illuminate\Console\Command;
 
@@ -13,6 +13,9 @@ class SendEmailWithGamesToUser extends Command
    
     public function handle()
     {
+        Log::info('entrou no handle');
+
+
         $products= Product::query()
         ->inRandomOrder()
         ->take(10)

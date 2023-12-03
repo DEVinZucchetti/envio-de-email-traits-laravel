@@ -8,7 +8,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {   
-    protected $command =[
+    protected $commands =[
         SendEmailWithGamesToUser::class
      ];
      
@@ -16,8 +16,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('app:send-email-with-games-to-user')
-        ->timezone('America/Sao_Paulo')
-        ->at('19:02');
+     ->everyMinute()
+     ->timezone('America/Guayaquil');
+        /*->at('19:51');*/
     }
 
     /**
