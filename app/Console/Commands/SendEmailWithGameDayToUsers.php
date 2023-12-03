@@ -18,10 +18,13 @@ class SendEmailWithGameDayToUsers extends Command
     public function handle()
     {
 
-       $products = Product::query()->inRandomOrder()->take(1)->get();
+        $products = Product::query()
+            ->inRandomOrder()
+            ->take(1)
+            ->get();
 
-       foreach ($products as $product) {
-        Log::info($product->name);
-       }
+        foreach ($products as $product) {
+            Log::info($product->name);
+        }
     }
 }
