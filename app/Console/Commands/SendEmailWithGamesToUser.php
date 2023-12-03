@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Console\Commands;
-use Illuminate\Support\Facades\Log;
+
+use App\Mail\SendEmailWithGames;
 use App\Models\Product;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SendEmailWithGamesToUser extends Command
 {  
@@ -21,9 +24,12 @@ class SendEmailWithGamesToUser extends Command
         ->take(10)
         ->get();
 
-        foreach($products as $product){
+        Mail::to('elianamorillo@mail.com', 'Eliana Morillo')
+        ->send(new SendEmailWithGames());
+
+        /*foreach($products as $product){
             Log::info($product->name);
 
-        }
+        }*/
     }
 }
