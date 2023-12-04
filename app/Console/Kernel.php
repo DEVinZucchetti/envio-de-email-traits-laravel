@@ -18,7 +18,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('app:send-email-with-games-to-user')
      /* ->everyMinute()*/
      ->timezone('America/Sao Paulo')
-     ->at('19:51');
+     ->at('18:00');
     }
 
     /**
