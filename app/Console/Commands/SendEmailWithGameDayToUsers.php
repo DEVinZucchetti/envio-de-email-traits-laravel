@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Mail\SendEmailWhitGameDay;
 use App\Models\Product;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SendEmailWithGameDayToUsers extends Command
 {
@@ -23,8 +25,10 @@ class SendEmailWithGameDayToUsers extends Command
             ->take(1)
             ->get();
 
-        foreach ($products as $product) {
+        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWhitGameDay);
+
+        /* foreach ($products as $product) {
             Log::info($product->name);
-        }
+         } */
     }
 }
