@@ -24,7 +24,7 @@ class SendEmailWithGamesToUser extends Command
         ->take(10)
         ->get();
 
-        Mail::to('elianamorillo@mail.com', 'Eliana Morillo')
+        Mail::to('elianamorillo@gmail.com', 'Eliana Morillo')
         ->send(new SendEmailWithGames());
 
         /*foreach($products as $product){
