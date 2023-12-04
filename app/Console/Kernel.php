@@ -16,9 +16,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         $schedule->command('app:send-email-with-games-to-user')
-     ->everyMinute()
-     ->timezone('America/Guayaquil');
-        /*->at('19:51');*/
+     /* ->everyMinute()*/
+     ->timezone('America/Sao Paulo')
+     ->at('19:51');
     }
 
     /**
