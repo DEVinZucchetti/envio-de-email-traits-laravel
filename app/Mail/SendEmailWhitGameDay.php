@@ -55,7 +55,7 @@ class SendEmailWhitGameDay extends Mailable
         $pdf = Pdf::loadView('pdfs.GameOfDayPdf');
 
         return [
-            Attachment::fromPath(fn () => $pdf->output())
+            Attachment::fromData(fn () => $pdf->output())
                 ->as('jogo_do_dia.pdf')
                 ->withMime('application/pdf')
         ];
