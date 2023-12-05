@@ -2,8 +2,10 @@
 
 namespace App\Mail;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Attachment;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -49,6 +51,13 @@ class SendEmailWhitGameDay extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+
+        $pdf = Pdf::loadView('pdfs.GameOfDayPdf');
+
+        return [
+            Attachment::fromPath(fn () => $pdf->output())
+                ->as('jogo_do_dia.pdf')
+                ->withMime('application/pdf')
+        ];
     }
 }
