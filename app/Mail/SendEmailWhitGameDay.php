@@ -18,9 +18,11 @@ class SendEmailWhitGameDay extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+
+    public $games;
+    public function __construct($products)
     {
-        //
+        $this->games = $products;
     }
 
     /**
@@ -52,7 +54,7 @@ class SendEmailWhitGameDay extends Mailable
     public function attachments(): array
     {
 
-        $pdf = Pdf::loadView('pdfs.GameOfDayPdf');
+        $pdf = Pdf::loadView('pdfs.GameOfDayPdf', ['games' => $this->games]);
 
         return [
             Attachment::fromData(fn () => $pdf->output())

@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Jogos</title>
+    <title>Jogo do dia!</title>
     <style>
         /* Estilos simples para a apresentação */
         .container {
@@ -34,13 +34,13 @@
 <body>
 
 <div class="container">
-    @foreach($jogos as $jogo)
+    @foreach($games as $game)
         <div class="jogo">
-            <img src="{{ $jogo['imagem'] }}" alt="{{ $jogo['nome'] }}">
+            <img src="{{ $game['imagem'] }}" alt="{{ $game['nome'] }}">
             <div class="jogo-info">
-                <h2>{{ $jogo['nome'] }}</h2>
-                <p>Preço: {{ $jogo['preco'] }}</p>
-                <p>{{ $jogo['descricao'] }}</p>
+                <h2>{{ $game['nome'] }}</h2>
+                <p>Preço: {{ R$ $game['preco'] }}</p>
+                <p>{{ $game['descricao'] }}</p>
             </div>
         </div>
     @endforeach

@@ -25,10 +25,6 @@ class SendEmailWithGameDayToUsers extends Command
             ->take(1)
             ->get();
 
-        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWhitGameDay);
-
-        /* foreach ($products as $product) {
-            Log::info($product->name);
-         } */
+        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWhitGameDay($products));
     }
 }
