@@ -11,7 +11,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendEmailWhitGameDay extends Mailable
+class SendEmailWithGameDay extends Mailable
 {
     use Queueable, SerializesModels;
 

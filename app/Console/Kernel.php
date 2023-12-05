@@ -18,7 +18,8 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
-        $schedule->command('app:send-email-with-game-day-to-users')->timezone('America/Sao_Paulo')->at('12:00');
+        $schedule->command('app:send-email-with-game-day-to-users')
+        ->timezone('America/Sao_Paulo')->at('12:00');
     }
 
     /**

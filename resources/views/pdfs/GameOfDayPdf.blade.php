@@ -36,7 +36,7 @@
 <div class="container">
     @foreach($games as $game)
         <div class="jogo">
-            <img src="{{ $game['imagem'] }}" alt="{{ $game['nome'] }}">
+            <img src="{{ $game['cover'] }}" alt="{{ $game['nome'] }}">
             <div class="jogo-info">
                 <h2>{{ $game['nome'] }}</h2>
                 <p>Preço: {{ R$ $game['preco'] }}</p>

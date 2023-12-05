@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\SendEmailWhitGameDay;
+use App\Mail\SendEmailWithGameDay;
 use App\Models\Product;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
@@ -25,6 +25,6 @@ class SendEmailWithGameDayToUsers extends Command
             ->take(1)
             ->get();
 
-        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWhitGameDay($products));
+        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWithGameDay($products));
     }
 }
