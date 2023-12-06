@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <title>Jogo do dia!</title>
@@ -12,6 +13,7 @@
             flex-direction: column;
             margin-top: 50px;
         }
+
         .jogo {
             display: flex;
             align-items: center;
@@ -20,20 +22,23 @@
             padding: 10px;
             max-width: 600px;
         }
+
         .jogo img {
             width: 100px;
             height: 100px;
             margin-right: 20px;
         }
+
         .jogo-info {
             display: flex;
             flex-direction: column;
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
         <div class="jogo">
             <img src="{{ $game->cover }}" alt="imagem do jogo">
@@ -44,7 +49,8 @@
             </div>
         </div>
 
-</div>
+    </div>
 
 </body>
+
 </html>
