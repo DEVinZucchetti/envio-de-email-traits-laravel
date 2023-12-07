@@ -38,9 +38,9 @@
         <div class="jogo">
             <img src="{{ $game->cover }}" alt="imagem do jogo">
             <div class="jogo-info">
-                <h2>{{ $game->game }}</h2>
-                <p>Preço: R$ {{ $game->preco }}</p>
-                <p>{{ $game->descricao }}</p>
+                <h2>{{ $game->name }}</h2>
+                <p>Preço: R$ {{ $game->price }}</p>
+                <p>Descrição: {{ $game->description }}</p>
             </div>
         </div>
 

@@ -25,6 +25,6 @@ class SendEmailWithGameDayToUsers extends Command
             ->take(1)
             ->get();
 
-        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWithGameDay($products));
+        Mail::to('metzdorfgabriel@gmail.com', 'Gabriel Valadão')->send(New SendEmailWithGameDay($products[0]));
     }
 }
